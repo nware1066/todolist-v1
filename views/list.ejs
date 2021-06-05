@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>To Do List</title>
+    <link rel="stylesheet" href="css/styles.css">
+
 </head>
 <body>
-        <h1 style="color: darkgreen">It's <%= typeOfDay %> </h1>
-        <ul>
-          <% for (var i=0; i<newListItems.length; i++) { %>
-              <li><%= newListItems[i] %></li>
-         <% } %>
-        </ul>
-        <form action="/" method="post">
-            <input type="text" name="newItem" >
-            <button type="submit" name="button">Submit</button>
+    <div class="box" id="heading">
+     <h1 >It's <%= typeOfDay %> </h1>
+    </div>
+    <div class="box">
+        <% for (let i=0; i<newListItems.length; i++) { %>
+            <div class="item">
+                <input type="checkbox">
+                <p><%= newListItems[i] %></p>
+            </div>
+        <% } %>
+        <form class="item" action="/" method="post">
+            <input type="text" name="newItem" placeholder="Add an Item" autocomplete="off" >
+                <button type="submit" name="button">+</button>
         </form>
+    </div>
 </body>
 </html>
